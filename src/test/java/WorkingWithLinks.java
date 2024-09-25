@@ -12,6 +12,7 @@ import java.util.List;
 public class WorkingWithLinks {
 
     private static final Logger log = LoggerFactory.getLogger(WorkingWithLinks.class);
+
     WebDriver driver;
 
     @BeforeMethod
