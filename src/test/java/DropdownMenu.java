@@ -69,10 +69,17 @@ public class DropdownMenu {
         driver.findElement(By.name("q")).sendKeys("palitha");
 
         Thread.sleep(2000);
-        List<WebElement> listOfDropDown3 = driver.findElements(By.xpath("//ul[@role='listbox']/li//div[@class='wM6W7d']"));
-        System.out.println(listOfDropDown3.size());
+        List<WebElement> googleSearchDropdown = driver.findElements(By.xpath("//ul[@role='listbox']/li//div[@class='wM6W7d']"));
+        System.out.println(googleSearchDropdown.size());
+
+        for(WebElement element : googleSearchDropdown){
+            System.out.println(element.getText());
+        }
+
+
     }
 
+    // Handle hidden auto suggestion dropdown and search using DOM debugger trick
 
 
 }
