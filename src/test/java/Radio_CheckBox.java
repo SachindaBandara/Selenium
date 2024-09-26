@@ -75,6 +75,23 @@ public class Radio_CheckBox {
 
     public void CheckBoxTests(){
 
+        // Select wanted checkboxes and verifying those checkboxes selected status
+
+        driver.get("https://www.leafground.com/checkbox.xhtml");
+
+        List<WebElement> checkboxList = driver.findElements(By.xpath("//table[@id='j_idt87:basic']//label"));
+        for (WebElement element : checkboxList){
+
+            if (!(element.getText().equals("Others"))){
+                element.click();
+            }
+        }
+
+        for (int i=1; i<=checkboxList.size(); i++){
+            boolean checkboxStatus = driver.findElement(By.xpath("(//table[@id='j_idt87:basic']//input)[" + i+"]")).isSelected();
+            System.out.println("Checkbox "+ i + "selected status is " + checkboxStatus);
+        }
+
     }
 
 }
